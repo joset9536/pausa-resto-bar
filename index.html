@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PAUSA · 25 de Mayo, Orán</title>
+  <meta name="description" content="PAUSA. Café, resto y barra en Alvarado y 25 de Mayo, San Ramón de la Nueva Orán, Salta." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#top">
+      <span class="seal" aria-hidden="true">
+        <svg viewBox="0 0 64 64" fill="none">
+          <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="3"/>
+          <rect x="23" y="18" width="6" height="28" rx="1" fill="currentColor"/>
+          <rect x="35" y="18" width="6" height="28" rx="1" fill="currentColor"/>
+        </svg>
+      </span>
+      <span class="brand-name">PAUSA</span>
+    </a>
+    <nav class="links">
+      <a href="#favoritos">Carta</a>
+      <a href="#comer">El local</a>
+      <a href="#reservar">Reservar</a>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-ghost" href="#reservar">Reservar mesa</a>
+      <a class="btn btn-amber" data-wa>WhatsApp</a>
+    </div>
+  </header>
+  <section class="hero" id="top">
+    <div class="hero-slides" id="heroSlides"></div>
+    <div class="hero-veil"></div>
+    <div class="hero-copy">
+      <p class="kicker">Alvarado y 25 de Mayo · Orán</p>
+      <h1>Café, resto y noche.</h1>
+      <p class="lead">Mesa de madera, luces plantadas y un solo botón para escribir.</p>
+      <div class="hero-actions">
+        <a class="btn btn-amber" href="#reservar">Reservar mesa</a>
+        <a class="btn btn-ghost" data-wa>WhatsApp</a>
+      </div>
+    </div>
+    <div class="hero-dots" id="heroDots"></div>
+  </section>
+  <section class="band" id="favoritos">
+    <div class="band-head">
+      <div>
+        <p class="kicker">Carta</p>
+        <h2>Lo que sale de la cocina</h2>
+      </div>
+      <a class="btn btn-tiny" data-wa>Pedí por WhatsApp</a>
+    </div>
+    <div class="track-wrap">
+      <button class="arrow prev" type="button" data-track-prev aria-label="Anterior">‹</button>
+      <div class="track" id="favTrack"></div>
+      <button class="arrow next" type="button" data-track-next aria-label="Siguiente">›</button>
+    </div>
+    <p class="fine">Variada. Precio y plato del día, por WhatsApp.</p>
+  </section>
+  <section class="split" id="vintage">
+    <div class="split-photo">
+      <img src="img/food-brindis.jpg" alt="Brindis en PAUSA" />
+    </div>
+    <div class="split-copy">
+      <p class="kicker">Madera y tungsteno</p>
+      <h2>Lo mejor queda en la mesa.</h2>
+      <p>El color del lugar es el de la madera y el vaso. Vintage porque se usa, no porque se diga.</p>
+      <a class="btn btn-ghost" href="#comer">Ver el patio</a>
+    </div>
+  </section>
+  <section class="band" id="comer">
+    <div class="band-head">
+      <div>
+        <p class="kicker">Patio</p>
+        <h2>Comé acá</h2>
+      </div>
+    </div>
+    <div class="patio" id="patio"></div>
+  </section>
+  <section class="reserve" id="reservar">
+    <div class="reserve-grid">
+      <div class="reserve-copy">
+        <p class="kicker">Una mesa</p>
+        <h2>Reservá tu lugar.</h2>
+        <p>La reserva llega al WhatsApp del local. El turno la anota en la planilla.</p>
+        <p class="fine">También por Instagram, Facebook o Maps.</p>
+      </div>
+      <form id="reservaForm" class="card-form" autocomplete="on">
+        <label>Nombre
+          <input name="nombre" required placeholder="Tu nombre" />
+        </label>
+        <label>Teléfono
+          <input name="tel" type="tel" required placeholder="3878…" />
+        </label>
+        <div class="row">
+          <label>Personas
+            <select name="personas">
+              <option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>8+</option>
+            </select>
+          </label>
+          <label>Motivo
+            <select name="motivo">
+              <option>Mesa</option><option>Cumpleaños</option><option>Después del trabajo</option><option>Otro</option>
+            </select>
+          </label>
+        </div>
+        <div class="row">
+          <label>Fecha
+            <input name="fecha" type="date" required />
+          </label>
+          <label>Hora
+            <input name="hora" type="time" required value="20:00" />
+          </label>
+        </div>
+        <label>Comentario
+          <textarea name="comentario" rows="2" placeholder="Algo que tengamos que saber"></textarea>
+        </label>
+        <button class="btn btn-amber full" type="submit">Enviar reserva</button>
+        <p class="form-ok" id="formOk" hidden>Listo. Se abre WhatsApp con la reserva escrita.</p>
+      </form>
+    </div>
+  </section>
+  <section class="band reviews" id="resenas">
+    <p class="kicker">Google</p>
+    <p class="rating-line"><strong>4.2</strong> <span>629 reseñas</span></p>
+    <a class="btn btn-ghost" data-maps target="_blank" rel="noopener">Leer en Maps</a>
+  </section>
+  <section class="lugar" id="lugar">
+    <h2>El local</h2>
+    <p>Alvarado y 25 de Mayo<br>San Ramón de la Nueva Orán, Salta</p>
+    <p>Tel. <a data-tel>3878 53-4824</a></p>
+    <p class="redes">
+      <a data-maps target="_blank" rel="noopener">Maps</a>
+      <a data-ig target="_blank" rel="noopener">Instagram</a>
+      <a data-fb target="_blank" rel="noopener">Facebook</a>
+      <a data-wa>WhatsApp</a>
+    </p>
+  </section>
+  <footer>
+    <span class="seal mini" aria-hidden="true">
+      <svg viewBox="0 0 64 64" fill="none">
+        <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="3"/>
+        <rect x="23" y="18" width="6" height="28" rx="1" fill="currentColor"/>
+        <rect x="35" y="18" width="6" height="28" rx="1" fill="currentColor"/>
+      </svg>
+    </span>
+    <p>PAUSA · 25 de Mayo, Orán</p>
+  </footer>
+  <div class="dock">
+    <a class="btn btn-amber" data-wa>WhatsApp</a>
+    <a class="btn btn-ghost" href="#reservar">Reservar</a>
+  </div>
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
