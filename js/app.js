@@ -1,18 +1,29 @@
 (function () {
   var D = window.PAUSA;
   var waBase = "https://wa.me/" + D.whatsapp + "?text=";
+
   function wa(text) {
     return waBase + encodeURIComponent(text || "Hola Pausa, quiero una mesa o la carta.");
   }
+
   document.querySelectorAll("[data-wa]").forEach(function (el) {
     el.href = wa();
     el.target = "_blank";
     el.rel = "noopener";
   });
-  document.querySelectorAll("[data-maps]").forEach(function (el) { el.href = D.maps; });
-  document.querySelectorAll("[data-ig]").forEach(function (el) { el.href = D.instagram; });
-  document.querySelectorAll("[data-fb]").forEach(function (el) { el.href = D.facebook; });
-  document.querySelectorAll("[data-tel]").forEach(function (el) { el.href = "tel:" + D.phoneTel; });
+  document.querySelectorAll("[data-maps]").forEach(function (el) {
+    el.href = D.maps;
+  });
+  document.querySelectorAll("[data-ig]").forEach(function (el) {
+    el.href = D.instagram;
+  });
+  document.querySelectorAll("[data-fb]").forEach(function (el) {
+    el.href = D.facebook;
+  });
+  document.querySelectorAll("[data-tel]").forEach(function (el) {
+    el.href = "tel:" + D.phoneTel;
+  });
+
   var slides = document.getElementById("heroSlides");
   var dots = document.getElementById("heroDots");
   D.hero.forEach(function (h, i) {
@@ -23,6 +34,7 @@
     slides.appendChild(img);
     var b = document.createElement("button");
     b.type = "button";
+    b.setAttribute("aria-label", h.label);
     if (i === 0) b.className = "on";
     b.addEventListener("click", function () { show(i); });
     dots.appendChild(b);
@@ -35,7 +47,10 @@
     imgs.forEach(function (im, i) { im.classList.toggle("on", i === idx); });
     ds.forEach(function (d, i) { d.classList.toggle("on", i === idx); });
   }
-  setInterval(function () { show(idx + 1); }, 5200);
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    setInterval(function () { show(idx + 1); }, 5200);
+  }
+
   var track = document.getElementById("favTrack");
   D.favoritos.forEach(function (f) {
     var art = document.createElement("article");
@@ -49,12 +64,21 @@
   document.querySelector("[data-track-next]").onclick = function () {
     track.scrollBy({ left: 280, behavior: "smooth" });
   };
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    setInterval(function () {
+      var max = track.scrollWidth - track.clientWidth;
+      if (track.scrollLeft >= max - 12) track.scrollTo({ left: 0, behavior: "smooth" });
+      else track.scrollBy({ left: Math.min(320, track.clientWidth * 0.78), behavior: "smooth" });
+    }, 4200);
+  }
+
   var patio = document.getElementById("patio");
   D.patio.forEach(function (p) {
     var fig = document.createElement("figure");
-    fig.innerHTML = "<img src=\"" + p.src + "\" alt=\"" + p.title + "\">";
+    fig.innerHTML = "<img src=\"" + p.src + "\" alt=\"" + p.title + "\"><figcaption>" + p.title + "</figcaption>";
     patio.appendChild(fig);
   });
+
   var form = document.getElementById("reservaForm");
   form.addEventListener("submit", function (e) {
     e.preventDefault();

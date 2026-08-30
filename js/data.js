@@ -18,14 +18,14 @@ window.PAUSA = {
     { src: "img/hero-dia.jpg", alt: "PAUSA de día, Alvarado y 25 de Mayo", label: "Día" }
   ],
   favoritos: [
-    { src: "img/food-sandwich.jpg", title: "Sándwich de la casa" },
+    { src: "img/food-medialunas.jpg", title: "Medialunas de jamón y queso" },
     { src: "img/food-tostado.jpg", title: "Tostado y jugo" },
-    { src: "img/food-brindis.jpg", title: "Barra" },
-    { src: "img/food-ensalada.jpg", title: "Ensalada" }
+    { src: "img/food-sandwich.jpg", title: "Sándwich de la casa" },
+    { src: "img/food-ensalada.jpg", title: "Ensalada" },
+    { src: "img/food-brindis.jpg", title: "La barra" }
   ],
   patio: [
-    { src: "img/hero-noche.jpg", title: "La esquina de noche" },
-    { src: "img/food-brindis.jpg", title: "La mesa" },
-    { src: "img/hero-dia.jpg", title: "De día" }
+    { src: "img/patio-joda.jpg", title: "Viernes y sábado" },
+    { src: "img/interior.jpg", title: "El brindis" }
   ]
 };
