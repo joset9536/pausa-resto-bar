@@ -1,6 +1,17 @@
 (function () {
   var D = window.PAUSA;
   var waBase = "https://wa.me/" + D.whatsapp + "?text=";
+  var BASE = location.hostname.indexOf("vercel.app") !== -1
+    ? "https://cdn.jsdelivr.net/gh/joset9536/pausa-resto-bar@5c0c82c/"
+    : "";
+
+  function asset(path) {
+    return BASE + path;
+  }
+
+  document.querySelectorAll("img[src^='img/']").forEach(function (im) {
+    im.src = asset(im.getAttribute("src"));
+  });
 
   function wa(text) {
     return waBase + encodeURIComponent(text || "Hola Pausa, quiero una mesa o la carta.");
@@ -28,7 +39,7 @@
   var dots = document.getElementById("heroDots");
   D.hero.forEach(function (h, i) {
     var img = document.createElement("img");
-    img.src = h.src;
+    img.src = asset(h.src);
     img.alt = h.alt;
     if (i === 0) img.className = "on";
     slides.appendChild(img);
@@ -55,7 +66,7 @@
   D.favoritos.forEach(function (f) {
     var art = document.createElement("article");
     art.className = "card-food";
-    art.innerHTML = "<img src=\"" + f.src + "\" alt=\"" + f.title + "\"><p>" + f.title + "</p>";
+    art.innerHTML = "<img src=\"" + asset(f.src) + "\" alt=\"" + f.title + "\"><p>" + f.title + "</p>";
     track.appendChild(art);
   });
   document.querySelector("[data-track-prev]").onclick = function () {
@@ -75,7 +86,7 @@
   var patio = document.getElementById("patio");
   D.patio.forEach(function (p) {
     var fig = document.createElement("figure");
-    fig.innerHTML = "<img src=\"" + p.src + "\" alt=\"" + p.title + "\"><figcaption>" + p.title + "</figcaption>";
+    fig.innerHTML = "<img src=\"" + asset(p.src) + "\" alt=\"" + p.title + "\"><figcaption>" + p.title + "</figcaption>";
     patio.appendChild(fig);
   });
 
