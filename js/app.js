@@ -8,10 +8,18 @@
     return waBase + encodeURIComponent(text || "Hola Pausa, quiero una mesa o la carta.");
   }
 
-  /* Paths relativos: sirven en local, OneDrive y Vercel. Sin CDN pinado. */
+  /* En Vercel las JPG van por jsDelivr del commit publicado (deploy MCP no aguanta el tree con fotos). Local = relativo. */
+  var BASE = location.hostname.indexOf("vercel.app") !== -1
+    ? "https://cdn.jsdelivr.net/gh/joset9536/pausa-resto-bar@333c561/"
+    : "";
+
   function asset(path) {
-    return path;
+    return BASE + path;
   }
+
+  document.querySelectorAll("img[src^='img/']").forEach(function (im) {
+    im.src = asset(im.getAttribute("src"));
+  });
 
   document.querySelectorAll("[data-wa]").forEach(function (el) {
     el.href = wa();
