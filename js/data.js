@@ -1,5 +1,6 @@
 window.PAUSA = {
   name: "PAUSA",
+  tagline: "cafe.resto.bar",
   city: "San Ramón de la Nueva Orán",
   province: "Salta",
   street: "25 de Mayo",
@@ -7,12 +8,15 @@ window.PAUSA = {
   plusCode: "VM8G+F6",
   phoneDisplay: "3878 53-4824",
   phoneTel: "+543878534824",
-  whatsapp: "543878534824",
+  whatsapp: "5493878534824",
   maps: "https://maps.app.goo.gl/q5cQG7UDGaiB5eXz5",
   instagram: "https://www.instagram.com/pausa.restobar.oran/",
   facebook: "https://www.facebook.com/pausacaferestob",
   rating: "4.2",
   reviews: "629",
+  live: "https://pausa-resto-bar.vercel.app",
+  /* FALTA: URL .../exec del Apps Script del Sheet. Vacío a propósito. No inventar webhook. */
+  sheetExec: "",
   hero: [
     { src: "img/hero-noche.jpg", alt: "PAUSA de noche, Alvarado y 25 de Mayo", label: "Noche" },
     { src: "img/hero-dia.jpg", alt: "PAUSA de día, Alvarado y 25 de Mayo", label: "Día" }

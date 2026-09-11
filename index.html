@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-AR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,13 +24,13 @@
       </span>
       <span class="brand-name">PAUSA</span>
     </a>
-    <nav class="links">
+    <nav class="links" aria-label="Principal">
       <a href="#favoritos">Carta</a>
       <a href="#comer">El local</a>
       <a href="#reservar">Reservar</a>
     </nav>
     <div class="nav-cta">
-      <a class="btn btn-ghost" href="#reservar">Reservar mesa</a>
+      <a class="btn btn-ghost hide-sm" href="#reservar">Reservar mesa</a>
       <a class="btn btn-amber" data-wa>WhatsApp</a>
     </div>
   </header>
@@ -149,7 +149,7 @@
   <section class="lugar" id="lugar">
     <h2>El local</h2>
     <p>Alvarado y 25 de Mayo<br>San Ramón de la Nueva Orán, Salta</p>
-    <p>Lun a vie 8 a 00 · Sáb 9 a 00 · Domingo cerrado</p>
+    <p class="fine">Horarios: consultá por WhatsApp.</p>
     <p>Tel. <a data-tel>3878 53-4824</a></p>
     <p class="redes">
       <a data-maps target="_blank" rel="noopener">Maps</a>
@@ -170,10 +170,11 @@
     <p>PAUSA · 25 de Mayo, Orán</p>
   </footer>
 
-  <div class="dock">
-    <a class="btn btn-amber" data-wa>WhatsApp</a>
-    <a class="btn btn-ghost" href="#reservar">Reservar</a>
-  </div>
+  <nav class="dock" aria-label="Mobile">
+    <a href="#favoritos">Carta</a>
+    <a href="#comer">Local</a>
+    <a class="dock-primary" href="#reservar">Reservar</a>
+  </nav>
 
   <script src="js/data.js"></script>
   <script src="js/app.js"></script>
