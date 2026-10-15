@@ -1,0 +1,13 @@
+# Carpetas locales de trabajo (no van a git)
+_backup-loop/
+_shots/
+
+# Videos y comprimidos: nunca a git
+*.mp4
+*.zip
+
+# Secretos y build
+.env
+.env.*
+.vercel/
+node_modules/
